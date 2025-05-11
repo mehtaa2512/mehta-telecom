@@ -5,24 +5,26 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <section className="relative h-screen overflow-hidden">
         {/* Background Image with Overlay */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat min-h-full"
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop')",
             backgroundPosition: "center center",
             backgroundSize: "cover",
+            width: "100vw",
+            height: "100vh"
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30 min-h-full" />
         </div>
 
         {/* Hero Content */}
         <div className="relative h-full flex items-center">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center md:text-left max-w-3xl mx-auto md:mx-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight whitespace-nowrap">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 Welcome to <span className="text-blue-400">Mehta Telecom</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 overflow-x-auto">
