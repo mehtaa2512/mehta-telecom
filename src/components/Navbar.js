@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { navigationData } from '../data/navigation';
 import LoginModal from './LoginModal';
@@ -7,6 +7,27 @@ const Navbar = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const mobileMenuRef = useRef(null);
+  const menuButtonRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMobileMenuOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className="bg-black text-white w-full">
@@ -78,6 +99,7 @@ const Navbar = () => {
               Login
             </button>
             <button
+              ref={menuButtonRef}
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
               aria-controls="mobile-menu"
@@ -107,7 +129,10 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute w-full bg-black z-[1001]">
+        <div 
+          ref={mobileMenuRef}
+          className="md:hidden absolute w-full bg-black z-[1001]"
+        >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navigationData.categories.map((category) => (
               <div key={category.name}>

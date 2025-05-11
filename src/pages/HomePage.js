@@ -8,9 +8,11 @@ const HomePage = () => {
       <section className="relative h-screen">
         {/* Background Image with Overlay */}
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop')",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30" />
@@ -19,7 +21,7 @@ const HomePage = () => {
         {/* Hero Content */}
         <div className="relative h-full flex items-center">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left max-w-3xl mx-auto md:mx-0">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 Welcome to <span className="text-blue-400">Mehta Telecom</span>
               </h1>
