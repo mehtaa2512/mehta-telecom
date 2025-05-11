@@ -23,7 +23,7 @@ const HomePage = () => {
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                 Welcome to <span className="text-blue-400">Mehta Telecom</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl">
+              <p className="text-xl md:text-2xl text-gray-200 mb-8 whitespace-nowrap">
                 Your One-Stop Shop for Premium Mobile Devices and Accessories
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
