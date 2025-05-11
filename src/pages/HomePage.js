@@ -22,7 +22,7 @@ const HomePage = () => {
         <div className="relative h-full flex items-center">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center md:text-left max-w-3xl mx-auto md:mx-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight whitespace-nowrap">
                 Welcome to <span className="text-blue-400">Mehta Telecom</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 overflow-x-auto">
